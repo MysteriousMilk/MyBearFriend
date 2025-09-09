@@ -373,3 +373,8 @@ Environment.props
 
 # not the generated dll for thunderstore
 */Package/plugins/*
+/MyBearFriend/Package/MyBearFriend.dll
+/MyBearFriend/Package/CHANGELOG.md
+/MyBearFriend/Package/README.md
+/MyBearFriend/Package/Assets/
+/MyBearFriend/Package/Assets/Translations/English/bearnames.json
