@@ -19,7 +19,7 @@ namespace MyBearFriend
     {
         public const string PluginGUID = "com.milkwyzard.MyBearFriend";
         public const string PluginName = "MyBearFriend";
-        public const string PluginVersion = "0.0.1";
+        public const string PluginVersion = "0.1.0";
         
         // Use this class to add your own localization to the game
         // https://valheim-modding.github.io/Jotunn/tutorials/localization.html
@@ -70,7 +70,7 @@ namespace MyBearFriend
             BearConsumableItems = Config.Bind(
                 "General",
                 "BearConsumableItems",
-                "Blueberries; RawMeat; DeerMeat",
+                "Blueberries; Honey; RawMeat; DeerMeat",
                     new ConfigDescription("Items that the Bear can consume/eat. Must be the name of the prefab. See Jotunn docs.",
                     null,
                     isAdminOnly)
@@ -179,9 +179,9 @@ namespace MyBearFriend
             if (sootheFx == null)
                 return;
 
-            Jotunn.Logger.LogWarning($"m_levelUpOwnerSkill - {wolfTameable.m_levelUpOwnerSkill}");
-            Jotunn.Logger.LogWarning($"m_tamingTime - {wolfTameable.m_tamingTime}");
-            Jotunn.Logger.LogWarning($"m_fedDuration - {wolfTameable.m_fedDuration}");
+            Jotunn.Logger.LogDebug($"m_levelUpOwnerSkill - {wolfTameable.m_levelUpOwnerSkill}");
+            Jotunn.Logger.LogDebug($"m_tamingTime - {wolfTameable.m_tamingTime}");
+            Jotunn.Logger.LogDebug($"m_fedDuration - {wolfTameable.m_fedDuration}");
 
             bearTameable = bearPrefab.AddComponent<Tameable>();
             bearTameable.m_fedDuration = BearFedDuration.Value;
@@ -220,7 +220,7 @@ namespace MyBearFriend
             if (itemDrop == null)
                 Jotunn.Logger.LogWarning($"Could not find item: {itemName}");
             else
-                Jotunn.Logger.LogInfo($"Bear can consume {itemDrop.name}");
+                Jotunn.Logger.LogDebug($"Bear can consume {itemDrop.name}");
         }
 
         private void SetRandomStartingNames(Tameable tameable)
