@@ -19,7 +19,7 @@ namespace MyBearFriend
     {
         public const string PluginGUID = "com.milkwyzard.MyBearFriend";
         public const string PluginName = "MyBearFriend";
-        public const string PluginVersion = "0.1.0";
+        public const string PluginVersion = "0.2.0";
         
         // Use this class to add your own localization to the game
         // https://valheim-modding.github.io/Jotunn/tutorials/localization.html
@@ -31,6 +31,7 @@ namespace MyBearFriend
         private int randomNameCount = 0;
         private bool creaturesAvailable = false;
         private bool prefabsAvailable = false;
+        private bool isConfigured = false;
 
         #region Config Variables
         /// <summary>
@@ -106,7 +107,7 @@ namespace MyBearFriend
         {
             prefabsAvailable = true;
 
-            if (prefabsAvailable && creaturesAvailable)
+            if (prefabsAvailable && creaturesAvailable && !isConfigured)
                 MakeBearTameable();
         }
 
@@ -114,7 +115,7 @@ namespace MyBearFriend
         {
             creaturesAvailable = true;
 
-            if (prefabsAvailable && creaturesAvailable)
+            if (prefabsAvailable && creaturesAvailable && !isConfigured)
                 MakeBearTameable();
         }
 
@@ -204,6 +205,8 @@ namespace MyBearFriend
             bearTameable.m_tamingBoostMultiplier = wolfTameable.m_tamingBoostMultiplier;
 
             SetRandomStartingNames(bearTameable);
+
+            isConfigured = true;
         }
 
         private static void AddConsumableItem(MonsterAI monsterAi, string itemName)
