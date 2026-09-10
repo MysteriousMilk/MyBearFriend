@@ -26,6 +26,9 @@ You can report issues with the mod at the github link below.\
 Additionally, you can reach me in the [Valheim Modding Discord](https://discord.com/invite/GUEBuCuAMz) under the name Milk.
 
 ## Changelog
+**v0.3.0 - Valheim 1.0 Build**\
+Rebuild for Valheim 1.0 (Deep North)
+
 **v0.2.0 - Maintainance Build**\
 Rebuild for Valheim patch 0.221.10.
 
